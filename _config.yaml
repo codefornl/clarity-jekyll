@@ -1,0 +1,10 @@
+title: Clarity Show Cases
+tagline: "Overzichten van #publictech show cases" 
+
+collections:
+  cbases:
+    output: true
+    permalink: /cbase/:slug/
+  showcases:
+    output: true
+    permalink: /showcase/:slug/

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clarity - show cases</title>
+    <link href="/css/foundation.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/additions.css" rel="stylesheet" type="text/css">
+    
+    <meta property='og:url' content='{{ uri }}'>
+    <meta property='og:title' name='title' content="Clarity - show cases">
+    <meta property='og:description' name='description' content="The CLARITY project brings together stakeholder networks across Europe into an engaged and mobilised community that supports innovation in open eGovernment applications.">
+    <meta property='og:image' content="https://clarity-csa.eu/sites/default/files/slider_07.png">
+    <link rel='image_src' href="https://clarity-csa.eu/sites/default/files/slider_07.png"/>
+    <meta name='keywords' content="">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:username" content="@codefornl">
+    <meta name="twitter:title" content="Clarity - show cases">
+    <meta name="twitter:description" content="The CLARITY project brings together stakeholder networks across Europe into an engaged and mobilised community that supports innovation in open eGovernment applications.">
+    <meta name="twitter:image:src" content="https://clarity-csa.eu/sites/default/files/slider_07.png">
+
+    <link rel='image_src' href='https://www.codefor.nl/img/larger_CfNL.png'/>
+    <link rel='shortcut icon' type='image/png' href='https://www.codefor.nl/img/larger_CfNL.png'>
+</head>
+
+<body class="layout">
+    {% assign cbases = site.cbases %}
+
+    {% include nav.html %}
+
+    <header class="main-header layout__main-header">
+        <a href="/">
+            <img src="/svg/clarity-showcases-logo.svg" alt="Clarity - show cases" class="main-header__logo">
+        </a>
+    </header>
+
+    <main class="main-content layout__main-content">
+
+        <!--
+        <form class="searchbar layout__searchbar">
+            <input type="text" class="searchbar__input" placeholder="Search Clarity" name="q" value="{{ q }}">
+            <button class="searchbar__button"><img src="/svg/searchbar-icon.svg"></button>
+        </form>
+        -->
+
+        {% for cbase in cbases %}
+        {% assign showcases = site.showcases | where: "cbase", cbase.slug %}
+
+        <div class="layout__row">
+            <a name="{{ cbase.slug }}"></a>
+
+            <div class="layout__list-meta">
+
+                <div class="list-summary">
+                    <a href="/cbase/{{ cbase.slug }}">
+                        <h2 class="list-summary__title">{{ cbase.name }}</h2>
+                    </a>
+                    
+                    <div class="list-summary__count">{{ showcases.size }} show case(s)</div>
+                    <p class="list-summary__description">{{ cbase.description }}</p>
+                    <div class="list-summary__curator">
+                        <div class="curator">
+                            <img
+                                data-original-img="{{ cbase.image }}"
+                                src="{{ cbase.admin.image }}" class="curator__avatar">
+                            <div class="curator__contact">
+                                <h3 class="curator__name">{{ cbase.admin.name }}</h3>
+                                <div class="curator__badge">curator</div>
+                                <a href="mailto:{{ cbase.admin.email }}" class="curator__email">{{ cbase.admin.email }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="layout__project-list">
+
+                {% for showcase in showcases limit: 3 %}
+                <a href="{{ showcase.url }}">
+                    <div class="project layout__project-list-item">
+                        <img
+                            data-original-img="{{ showcase.image }}"
+                            src="{{ showcase.image }}" class="project__image">
+                        <div class="project__meta">
+                            <div class="project__summary">
+                                <h3 class="project__title">{{ showcase.name }}</h3>
+                                <h4 class="project__location">{{ showcase.organisation }}</h4>
+                            </div>
+                            <!--
+                            <div class="project__tools">
+                                <img src="/svg/tools-icon.svg" class="project__tools-icon">
+                                <span class="project__tools-count">{{ usecase.tools|length }} tool</span>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        {% if showcases.size > 3 %}
+        <div style="text-align: center; background: #eee; margin-bottom: 100px;">
+            <a href="/cbase/{{ cbase.slug }}" class="forward-link" style="margin: 0; line-height: 4em; color: #333; font-weight: bold">Bekijk alle {{ cbase.name }} show cases →</a>
+        </div>
+        {% endif %}
+        
+{% endfor %}
+        
+    </main>
+    
+    {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,115 @@
+.layout__row {
+    padding: 20px 0;
+}
+.admin-mode-notifier {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    background: #F34E4E;
+    line-height: 2em
+}
+.cbase-update,
+.project-create,
+.project-update,
+.project-delete {
+    text-align: left;
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+}
+.cbase-update,
+.project-create,
+.project-update {
+    background: #ccc;
+}
+.cbase-update .cbase-update__header,
+.project-update .project-update__header {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 2px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.cbase-update .cbase-update__input,
+.project-create .project-create__input,
+.project-update .project-update__input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    width: 100%;
+    border: 0;
+    padding: 4px 10px;
+}
+.cbase-update .cbase-update__textarea,
+.project-update .project-update__textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    border: 0;
+    min-height: 200px;
+    padding: 10px;
+}
+.cbase-update .cbase-update__button,
+.project-create .project-create__button,
+.project-update .project-update__button,
+.project-delete .project-delete__button {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background: #74C7A8;
+    display: inline-block;
+    padding: 1px 8px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.project-delete .project-delete__button {
+    margin-top: 100px;
+    background: #F34E4E;
+}
+.list-summary__curator {
+    min-height: 120px;
+}
+.forward-link {
+    color: #74C7A8;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 40px;
+    display: block;
+}
+.project__title {
+    overflow: hidden;
+}
+.project__location {
+    overflow: hidden;
+}
+.layout__project-list-item {
+    padding: 0 10px 20px;
+}
+footer {
+    background: #444;
+}
+.footer__text {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    padding-bottom: 40px;
+}
+.footer__text p {
+    margin-top: 10px;
+}
+.footer__text a {
+    text-decoration: underline;
+}
+.back-link {
+    margin-bottom: 20px;
+}
+.project-meta__curator {
+    min-height: 80px;
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+{% assign showcase = page %}
+{% assign cbase = site.cbases | where: "slug", showcase.cbase | first %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clarity - show cases</title>
+    <link href="/css/foundation.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/additions.css" rel="stylesheet" type="text/css">
+    
+    <meta property='og:url' content='{{ uri }}'>
+    <meta property='og:title' name='title' content="{{ showcase.name }}">
+    <meta property='og:description' name='description' content="{{ showcase.teaser }}">
+    <meta property='og:image' content="{{ showcase.image }}">
+    <link rel='image_src' href="{{ showcase.image }}"/>
+    <meta name='keywords' content="">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:username" content="@codefornl">
+    <meta name="twitter:title" content="{{ showcase.name }}">
+    <meta name="twitter:description" content="{{ showcase.teaser }}">
+    <meta name="twitter:image:src" content="{{ showcase.image }}">
+    
+    <link rel='image_src' href='https://www.codefor.nl/img/larger_CfNL.png'/>
+    <link rel='shortcut icon' type='image/png' href='https://www.codefor.nl/img/larger_CfNL.png'>
+</head>
+<body class="layout">
+
+    {% if cbase.highlight_color %}
+    <style>
+        .curator__badge,
+        .searchbar__button { background: {{ cbase.highlight_color }} }
+        .back-link,
+        .wrapper__text a { color: {{ cbase.highlight_color }} }
+    </style>
+    {% endif %}
+
+    {% include nav.html %}
+
+    <header class="main-header layout__main-header">
+        <a href="/#{{ showcase.cbase }}">
+            {% if cbase.logo_image %}
+            <img src="{{ cbase.logo_image }}" alt="Clarity - show cases" class="main-header__logo">
+            {% else %}
+            <img src="/svg/clarity-showcases-logo.svg" alt="Clarity - show cases" class="main-header__logo">
+            {% endif %}
+        </a>
+    </header>
+
+    <main class="main-content layout__main-content">
+
+        <!--
+        <form class="searchbar layout__searchbar" action="/cbase/{{ cbase.slug }}">
+            <input type="text" class="searchbar__input" placeholder="Search" name="q" value="{{ q }}">
+            <button class="searchbar__button"><img src="/svg/searchbar-icon.svg"></button>
+        </form>
+        -->
+        
+        <div class="layout__row">
+
+            <a href="/cbase/{{ cbase.slug }}#{{ showcase.slug }}" class="back-link layout__back">&larr; {{ cbase.name }} show cases</a>
+            
+            <article class="project-detail layout__project-detail">
+                <div class="project-detail__image"
+                    data-original-img="{{ showcase.image }}"
+                    style="background-image: url({{ showcase.image }})">
+                    <div class="project-detail__overlay">
+                        <h1 class="project-detail__title">{{ showcase.name }}</h1>
+                        <h2 class="project-detail__location">{{ showcase.organisation }} ({{ showcase.country }})</h2>
+                    </div>
+                </div>
+                <div class="wrapper__text">
+                    <div class="introduction">{{ showcase.teaser | markdownify }}</div>
+
+                    {{ showcase.description | markdownify }}
+
+                    <p><a href="{{ showcase.website }}">{{ showcase.website }}</a></p>
+                </div>
+            </article>
+
+            <aside class="project-meta layout__project-meta">
+
+                <div class="project-meta__item">
+                    <h3 class="project-meta__header">Categorie</h3>
+                    <p class="project-meta__text">{{ showcase.category }}</p>
+                </div>
+
+                <div class="project-meta__item">
+                    <h3 class="project-meta__header">Type</h3>
+                    <p class="project-meta__text">{{ showcase.type }}</p>
+                </div>
+
+                <div class="project-meta__item">
+                    <h3 class="project-meta__header">Tools</h3>
+                    {% for tool in showcase.tools %}
+                    <a href="{{ tool }}" class="project-meta__link">{{ tool }}</a><br>
+                    {% endfor %}
+                </div>
+
+                <div class="project-meta__curator">
+                    <div class="curator">
+                        <img
+                            data-original-img="{{ showcase.contact.image }}"
+                            src="{{ showcase.contact.image }}" class="curator__avatar">
+                        <div class="curator__contact">
+                            <h3 class="curator__name">{{ showcase.contact.name }}</h3>
+                            <div class="curator__badge">contact</div>
+                            <a href="mailto:{{ showcase.contact.email }}" class="curator__email">{{ showcase.contact.email }}</a>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+</html>
