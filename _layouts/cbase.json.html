@@ -1,0 +1,25 @@
+{% assign cbase = site.cbases | where: "slug", page.cbase | first %}
+{% assign showcases = site.showcases | where: "cbase", cbase.slug %}
+{
+    "_links": {
+        "_self": {
+            "href": "{{ site.url }}{{ page.permalink }}",
+            "title": "{{ cbase.description }}"
+        }
+    },
+    "name": "{{ cbase.name }}",
+    "description": "{{ cbase.description }}",
+    "admin": {
+        "name": "{{ cbase.admin.name }}",
+        "image": "{{ cbase.admin.image }}",
+        "email": "{{ cbase.admin.email }}"
+    },
+    "count": {{ showcases.size }},
+    "_embedded": {
+        {% for showcase in showcases %}
+        "{{ showcase.name }}": {
+            
+        }{% if forloop.last == false %},{% endif %}
+        {% endfor %}
+    }
+}

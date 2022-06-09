@@ -30,6 +30,8 @@
 
 <body class="layout">
 
+    <div id="cbase">
+
     {% if cbase.highlight_color %}
     <style>
         .project__meta,
@@ -93,7 +95,7 @@
                         </div>
                     </div>
                     <div class="list-summary__controls">
-                        <a href="/cbase/{{ cbase.slug }}/presi">🎞 open in presentatiemodus</a>
+                        <a id="start_presi" href="#">🎞 open in presentatiemodus</a>
                     </div>
                 </div>
 
@@ -131,5 +133,9 @@
     </main>
 
     {% include footer.html %}
+
+    </div>
+
+    {% include presi.html %}
 </body>
 </html>

@@ -8,3 +8,13 @@ collections:
   showcases:
     output: true
     permalink: /showcase/:slug/
+  api:
+    output: true
+    permalink: /cbase/:slug.json
+
+defaults:
+  -
+    scope:
+      path: "_api"
+    values:
+      layout: "cbase.json"
