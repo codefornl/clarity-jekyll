@@ -5,7 +5,7 @@ image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeh
 name: Noord-Brabant Algoritmeregister
 organisation: Provincie Noord-Brabant
 country: Nederland
-teaser: De Provincie Noord-Brabant neemt het stokje over van het consortium 'publieke controle op algoritmes' en ontwikkeld verder aan het prototype beheersysteem op basis van open source.
+teaser: De Provincie Noord-Brabant neemt het stokje over van het consortium 'publieke controle op algoritmes' en ontwikkelt verder aan het prototype beheersysteem op basis van open source.
 description: 
 website: https://brabant.beheer.algoritmeregister.nl
 category: algoritmeregisters
