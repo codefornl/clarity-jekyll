@@ -41,16 +41,17 @@
     }
 </style>
 
-<main class="main-content layout__main-content">
+<main id="showcase" class="main-content layout__main-content"></main>
 
+<script id="showcase_template" type="text/template">
     <article class="project-detail layout__project-detail">
         <div class="project-detail__image"
-            data-original-img="{{ showcase.image }}"
-            style="background-image: url({{ showcase.image }})">
+            data-original-img="<%=image%>"
+            style="background-image: url(<%=image%>)">
 
             <div class="project-detail__overlay">
                 <h2 class="project-detail__location">{{ cbase.name }}</h2>
-                <h1 class="project-detail__title">{{ showcase.name }}</h1>
+                <h1 class="project-detail__title"><%=name%></h1>
             </div>
         </div>
     </article>
@@ -58,69 +59,71 @@
     <aside class="project-meta layout__project-meta">
 
         <div class="project-meta__item">
-            <h1 class="project-detail__title">{{ showcase.organisation }}</h1>
-            <h2 class="project-detail__location">({{ showcase.country }})</h2>
+            <h1 class="project-detail__title"><%=organisation%></h1>
+            <h2 class="project-detail__location"><%=country%></h2>
         </div>
 
         <div class="project-meta__item">
             <h3 class="project-meta__header">Categorie</h3>
-            <p class="project-meta__text">{{ showcase.category }}</p>
+            <p class="project-meta__text"><%=category%></p>
         </div>
 
         <div class="project-meta__item">
             <h3 class="project-meta__header">Type</h3>
-            <p class="project-meta__text">{{ showcase.type }}</p>
+            <p class="project-meta__text"><%=type%></p>
         </div>
 
         <div class="project-meta__item">
             <h3 class="project-meta__header">Tools</h3>
-            <a href="{{ showcase.download }}" class="project-meta__link">{{ showcase.download }}</a>
+            <a href="<%=website%>" class="project-meta__link"><%=website%></a>
         </div>
 
         <div class="project-meta__curator">
             <div class="curator">
                 <img
-                    data-original-img="{{ showcase.contact.image }}"
-                    src="{{ showcase.contact.image }}" class="curator__avatar">
+                    data-original-img="<%=contact.image%>"
+                    src="<%=contact.image%>" class="curator__avatar">
                 <div class="curator__contact">
-                    <h3 class="curator__name">{{ showcase.contact.name }}</h3>
+                    <h3 class="curator__name"><%=contact.name%></h3>
                     <div class="curator__badge">curator</div>
-                    <a href="mailto:{{ showcase.contact_email }}" class="curator__email">{{ showcase.contact_email }}</a>
+                    <a href="mailto:<%=contact.email%>" class="curator__email"><%=contact.email%></a>
                 </div>
             </div>
         </div>
 
         <div class="project-meta__item" style="font-family: Arial; position: absolute; bottom: 20px; text-align: center; width: 100%; margin: 0">
-            <a id="link-prev" href="?page={{ prev }}">← vorige</a> |
-            <a id="link-next" href="?page={{ next }}">volgende →</a><br>
+            <a id="link-prev" href="#">← vorige</a> |
+            <a id="link-next" href="#">volgende →</a><br>
             <br>
-            <a id="link-close" href="/cbase/{{ cbase.slug }}#{{ showcase.slug }}">presentatiemodus sluiten ✖</a>
+            <a id="link-close" href="/cbase/{{ cbase.slug }}#<%=slug%>">presentatiemodus sluiten ✖</a>
         </div>
 
     </aside>
-
-</main>
+</script>
 
 <script type="module">
     import Presi from '/js/Presi.mjs';
     var cbaseUrl = "/cbase/{{ cbase.slug }}.json";
     var cbase = await fetch (cbaseUrl).then(rs => rs.json());
-    var presi = new Presi(cbase);
-    presi.test();
+    var presi = new Presi(cbase, document.getElementById('showcase'));
 
     document.getElementById("start_presi").onclick = function () {
         document.getElementById("cbase").style.display = "none";
         document.getElementById("presi").style.display = "block";
+        presi.start();
     }
 
     document.onkeydown = function (e) {
         e = e || window.event;
         switch (e.key) {
-            case 'ArrowLeft': document.getElementById('link-prev').click(); break;
-            case 'ArrowRight': document.getElementById('link-next').click(); break;
+            case 'ArrowLeft': presi.next(); break;
+            case 'ArrowRight': presi.prev(); break;
             case 'Escape': e.preventDefault(); document.getElementById('link-close').click(); break;
         }
-    };  
+    };
+
+    //document.getElementById('link-prev').click()
+    //document.getElementById('link-next').click()
 </script>
 
 </div>

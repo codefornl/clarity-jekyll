@@ -15,9 +15,9 @@
         "email": "{{ cbase.admin.email }}"
     },
     "count": {{ showcases.size }},
-    "_embedded": {
-        {% for showcase in showcases %}
-        "{{ showcase.slug }}": {
+    "_embedded": [{% for showcase in showcases %}
+        {
+            "slug": "{{ showcase.slug }}",
             "image": "{{ showcase.image }}",
             "name": "{{ showcase.name }}",
             "organisation": "{{ showcase.organisation }}",
@@ -37,5 +37,5 @@
             }
         }{% if forloop.last == false %},{% endif %}
         {% endfor %}
-    }
+    ]
 }
