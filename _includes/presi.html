@@ -1,3 +1,4 @@
+{% assign showcase = showcases | first %}
 <div id="presi" class="presi" style="display: none">
 
 <style>
@@ -44,12 +45,12 @@
 
     <article class="project-detail layout__project-detail">
         <div class="project-detail__image"
-            data-original-img="{{ usecase.image }}"
-            style="background-image: url(https://img.codefor.nl?url={{ (usecase.image|default('https://clarity.codefor.nl/img/One_black_Pixel.png'))|url_encode }}&height=426&width=640)">
+            data-original-img="{{ showcase.image }}"
+            style="background-image: url({{ showcase.image }})">
 
             <div class="project-detail__overlay">
                 <h2 class="project-detail__location">{{ cbase.name }}</h2>
-                <h1 class="project-detail__title">{{ usecase.name }}</h1>
+                <h1 class="project-detail__title">{{ showcase.name }}</h1>
             </div>
         </div>
     </article>
@@ -57,34 +58,34 @@
     <aside class="project-meta layout__project-meta">
 
         <div class="project-meta__item">
-            <h1 class="project-detail__title">{{ usecase.organisation }}</h1>
-            <h2 class="project-detail__location">({{ usecase.country }})</h2>
+            <h1 class="project-detail__title">{{ showcase.organisation }}</h1>
+            <h2 class="project-detail__location">({{ showcase.country }})</h2>
         </div>
 
         <div class="project-meta__item">
-            <h3 class="project-meta__header">{{ translate("Category", usecase._embedded.cbase.language) }}</h3>
-            <p class="project-meta__text">{{ usecase.category }}</p>
+            <h3 class="project-meta__header">Categorie</h3>
+            <p class="project-meta__text">{{ showcase.category }}</p>
         </div>
 
         <div class="project-meta__item">
-            <h3 class="project-meta__header">{{ translate("Type", usecase._embedded.cbase.language) }}</h3>
-            <p class="project-meta__text">{{ usecase.type }}</p>
+            <h3 class="project-meta__header">Type</h3>
+            <p class="project-meta__text">{{ showcase.type }}</p>
         </div>
 
         <div class="project-meta__item">
-            <h3 class="project-meta__header">{{ translate("Tools", usecase._embedded.cbase.language) }}</h3>
-            <a href="{{ usecase.download }}" class="project-meta__link">{{ usecase.download }}</a>
+            <h3 class="project-meta__header">Tools</h3>
+            <a href="{{ showcase.download }}" class="project-meta__link">{{ showcase.download }}</a>
         </div>
 
         <div class="project-meta__curator">
             <div class="curator">
                 <img
-                    data-original-img="{{ usecase.contact_image }}"
-                    src="https://img.codefor.nl?url={{ (usecase.contact_image|default('https://clarity.codefor.nl/img/One_black_Pixel.png'))|url_encode }}&height=80&width=80" class="curator__avatar">
+                    data-original-img="{{ showcase.contact.image }}"
+                    src="{{ showcase.contact.image }}" class="curator__avatar">
                 <div class="curator__contact">
-                    <h3 class="curator__name">{{ usecase.contact_name }}</h3>
-                    <div class="curator__badge">{{ translate("contact", usecase._embedded.cbase.language) }}</div>
-                    <a href="mailto:{{ usecase.contact_email }}" class="curator__email">{{ usecase.contact_email }}</a>
+                    <h3 class="curator__name">{{ showcase.contact.name }}</h3>
+                    <div class="curator__badge">curator</div>
+                    <a href="mailto:{{ showcase.contact_email }}" class="curator__email">{{ showcase.contact_email }}</a>
                 </div>
             </div>
         </div>
@@ -93,14 +94,20 @@
             <a id="link-prev" href="?page={{ prev }}">← vorige</a> |
             <a id="link-next" href="?page={{ next }}">volgende →</a><br>
             <br>
-            <a id="link-close" href="/cbase/{{ cbase.slug }}#{{ usecase.slug }}">presentatiemodus sluiten ✖</a>
+            <a id="link-close" href="/cbase/{{ cbase.slug }}#{{ showcase.slug }}">presentatiemodus sluiten ✖</a>
         </div>
 
     </aside>
 
 </main>
 
-<script>
+<script type="module">
+    import Presi from '/js/Presi.mjs';
+    var cbaseUrl = "/cbase/{{ cbase.slug }}.json";
+    var cbase = await fetch (cbaseUrl).then(rs => rs.json());
+    var presi = new Presi(cbase);
+    presi.test();
+
     document.getElementById("start_presi").onclick = function () {
         document.getElementById("cbase").style.display = "none";
         document.getElementById("presi").style.display = "block";
@@ -113,6 +120,7 @@
             case 'ArrowRight': document.getElementById('link-next').click(); break;
             case 'Escape': e.preventDefault(); document.getElementById('link-close').click(); break;
         }
-    };
+    };  
 </script>
+
 </div>
