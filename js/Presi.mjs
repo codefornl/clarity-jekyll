@@ -1,5 +1,14 @@
-export default function (cbase, template) {
+export default function (containerId, templateId, cbase) {
     var showcases = cbase["_embedded"];
+
+    document.onkeydown = function (e) {
+        e = e || window.event;
+        switch (e.key) {
+            case 'ArrowLeft': next(); break;
+            case 'ArrowRight': prev(); break;
+            case 'Escape': e.preventDefault(); document.getElementById('link-close').click(); break;
+        }
+    };
 
     function arrayRotate(arr, reverse) {
         if (reverse) arr.unshift(arr.pop());
@@ -8,15 +17,21 @@ export default function (cbase, template) {
     }
 
     function start() {
-        document.getElementById("showcase").innerHTML = tmpl("showcase_template", showcases[0]);
+        document.getElementById(containerId).innerHTML = tmpl(templateId, showcases[0]);
+        document.getElementById("link-prev").onclick = prev;
+        document.getElementById("link-next").onclick = next;
     }
 
     function next() {
-        document.getElementById("showcase").innerHTML = tmpl("showcase_template", arrayRotate(showcases)[0]);
+        document.getElementById(containerId).innerHTML = tmpl(templateId, arrayRotate(showcases)[0]);
+        document.getElementById("link-prev").onclick = prev;
+        document.getElementById("link-next").onclick = next;
     }
 
     function prev() {
-        document.getElementById("showcase").innerHTML = tmpl("showcase_template", arrayRotate(showcases, true)[0]);
+        document.getElementById(containerId).innerHTML = tmpl(templateId, arrayRotate(showcases, true)[0]);
+        document.getElementById("link-prev").onclick = prev;
+        document.getElementById("link-next").onclick = next;
     }
 
     return {

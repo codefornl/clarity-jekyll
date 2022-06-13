@@ -105,25 +105,13 @@
     import Presi from '/js/Presi.mjs';
     var cbaseUrl = "/cbase/{{ cbase.slug }}.json";
     var cbase = await fetch (cbaseUrl).then(rs => rs.json());
-    var presi = new Presi(cbase, document.getElementById('showcase'));
+    var presi = new Presi("showcase", "showcase_template", cbase);
 
     document.getElementById("start_presi").onclick = function () {
         document.getElementById("cbase").style.display = "none";
         document.getElementById("presi").style.display = "block";
         presi.start();
     }
-
-    document.onkeydown = function (e) {
-        e = e || window.event;
-        switch (e.key) {
-            case 'ArrowLeft': presi.next(); break;
-            case 'ArrowRight': presi.prev(); break;
-            case 'Escape': e.preventDefault(); document.getElementById('link-close').click(); break;
-        }
-    };
-
-    //document.getElementById('link-prev').click()
-    //document.getElementById('link-next').click()
 </script>
 
 </div>
