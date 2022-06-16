@@ -1,7 +1,7 @@
 ---
 layout: cbase
 name: Participatietools
-description: Overzicht van verschillende participatietools die in de praktijk worden ingezet 
+description: Overzicht van hoe verschillende organisaties digitale participatietools inzetten om mensen te betrekken in hun (democratische) besluitvorming
 admin:
     name: Johan Groenen
     email: johan@codefor.nl

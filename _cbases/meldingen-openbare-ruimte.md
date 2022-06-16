@@ -1,7 +1,7 @@
 ---
 layout: cbase
 name: Meldingen Openbare Ruimte
-description: Overzicht van verschillende tools voor meldingen openbare ruimte die in de praktijk worden ingezet 
+description: Overzicht van hoe verschillende gemeenten open source oplossingen inzetten op het gebied van meldingen en onderhoud van openbare ruimte
 admin:
     name: Johan Groenen
     email: johan@codefor.nl
