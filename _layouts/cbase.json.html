@@ -8,7 +8,7 @@
         }
     },
     "name": "{{ cbase.name }}",
-    "description": "{{ cbase.description }}",
+    "description": "{{ cbase.description | strip_newlines }}",
     "admin": {
         "name": "{{ cbase.admin.name }}",
         "image": "{{ cbase.admin.image }}",
@@ -22,8 +22,8 @@
             "name": "{{ showcase.name }}",
             "organisation": "{{ showcase.organisation }}",
             "country": "{{ showcase.country }}",
-            "teaser": "{{ showcase.teaser }}",
-            "description": "{{ showcase.description }}",
+            "teaser": "{{ showcase.teaser | markdownify | strip_newlines }}",
+            "description": "{{ showcase.description | markdownify | strip_newlines }}",
             "website": "{{ showcase.website }}",
             "category": "{{ showcase.category }}",
             "type": "{{ showcase.type }}",

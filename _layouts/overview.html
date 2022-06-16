@@ -80,25 +80,27 @@
             <div class="layout__project-list">
 
                 {% for showcase in showcases limit: 3 %}
-                <a href="{{ showcase.url }}">
-                    <div class="project layout__project-list-item">
-                        <img
-                            data-original-img="{{ showcase.image }}"
-                            src="{{ showcase.image }}" class="project__image">
-                        <div class="project__meta">
-                            <div class="project__summary">
-                                <h3 class="project__title">{{ showcase.name }}</h3>
-                                <h4 class="project__location">{{ showcase.organisation }}</h4>
+                <div class="layout__project-list-item-wrapper">
+                    <a href="{{ showcase.url }}">
+                        <div class="project layout__project-list-item">
+                            <img
+                                data-original-img="{{ showcase.image }}"
+                                src="{{ showcase.image }}" class="project__image">
+                            <div class="project__meta">
+                                <div class="project__summary">
+                                    <h3 class="project__title">{{ showcase.name }}</h3>
+                                    <h4 class="project__location">{{ showcase.organisation }}</h4>
+                                </div>
+                                <!--
+                                <div class="project__tools">
+                                    <img src="/svg/tools-icon.svg" class="project__tools-icon">
+                                    <span class="project__tools-count">{{ usecase.tools|length }} tool</span>
+                                </div>
+                                -->
                             </div>
-                            <!--
-                            <div class="project__tools">
-                                <img src="/svg/tools-icon.svg" class="project__tools-icon">
-                                <span class="project__tools-count">{{ usecase.tools|length }} tool</span>
-                            </div>
-                            -->
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 {% endfor %}
 
             </div>

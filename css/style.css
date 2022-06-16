@@ -154,6 +154,8 @@
 .project__image {
   display: block;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .project__meta {
   background: #74C7A8;
@@ -339,18 +341,22 @@
 .layout__project-list {
   flex: 3;
 }
-.layout__project-list-item {
+.layout__project-list-item-wrapper {
   float: left;
   width: 33.33333%;
+  margin-bottom: 40px;
+}
+.layout__project-list-item {
+  height: 240px;
   padding: 0 20px 20px 0px;
 }
 @media only screen and (max-width: 870px) and (min-width: 461px ) {
-  .layout__project-list-item {
+  .layout__project-list-item-wrapper  {
     width: 100%;
   }
 }
 @media only screen and (max-width: 460px) {
-  .layout__project-list-item {
+  .layout__project-list-item-wrapper {
     width: 100%;
   }
 }
