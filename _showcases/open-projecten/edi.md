@@ -1,13 +1,13 @@
 ---
 layout: showcase
 cbase: open-projecten
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019
+image: https://edi.pleio.nl/attachment/8e5a6539-f9de-4261-943f-fa8e20e82c1c?size=1024
 name: EDI Digitale Identiteit
 organisation: Ministerie van Binnenlandse Zaken en Koninkrijksrelaties
 country: Nederland
 teaser: 
 description: 
-website: https://
+website: https://edi.pleio.nl/
 category: digitale overheid
 type: 
 tools: ['https://']
