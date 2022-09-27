@@ -2,7 +2,7 @@
 layout: showcase
 cbase: algoritmeregisters
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019
-name: Utrecht Algoritmeregister
+name: Algoritmeregister Utrecht
 organisation: Gemeente Utrecht
 country: Nederland
 teaser: Utrecht gebruikt een Excel overzicht als algoritmeregister en publiceert dit op data.overheid.nl
