@@ -20,5 +20,5 @@ tools: ['https://github.com/Algoritmeregister']
 contact:
     name: Johan Groenen
     email: johan@tiltshift.nl
-    image: 
+    image: https://www.jgroenen.nl/img/jgroenen.png
 ---
