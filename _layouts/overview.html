@@ -106,11 +106,13 @@
             </div>
         </div>
 
-        {% if showcases.size > 3 %}
         <div style="text-align: center; background: #eee; margin-bottom: 100px;">
+            {% if showcases.size > 3 %}
             <a href="/cbase/{{ cbase.slug }}" class="forward-link" style="margin: 0; line-height: 4em; color: #333; font-weight: bold">Bekijk alle {{ cbase.name }} show cases →</a>
+            {% else %}
+            <p class="forward-link" style="margin: 0; line-height: 4em; color: #333; font-weight: bold">&nbsp;</p>
+            {% endif %}
         </div>
-        {% endif %}
         
 {% endfor %}
         

@@ -23,7 +23,7 @@
             "organisation": "{{ showcase.organisation }}",
             "country": "{{ showcase.country }}",
             "teaser": "{{ showcase.teaser | markdownify | strip_newlines }}",
-            "description": "{{ showcase.description | markdownify | strip_newlines }}",
+            "description": "{{ showcase.description | markdownify | strip_newlines | escape}}",
             "website": "{{ showcase.website }}",
             "category": "{{ showcase.category }}",
             "type": "{{ showcase.type }}",
@@ -31,9 +31,9 @@
                 ""
             ],
             "contact": {
-                "name": "",
-                "email": "",
-                "image": ""
+                "name": "{{ showcase.contact.name }}",
+                "email": "{{ showcase.contact.email }}",
+                "image": "{{ showcase.contact.image }}"
             }
         }{% if forloop.last == false %},{% endif %}
         {% endfor %}

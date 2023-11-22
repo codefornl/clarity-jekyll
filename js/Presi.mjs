@@ -2,7 +2,6 @@ export default function (containerId, templateId, cbase) {
     var showcases = cbase["_embedded"];
 
     document.onkeydown = function (e) {
-        e = e || window.event;
         switch (e.key) {
             case 'ArrowLeft': next(); break;
             case 'ArrowRight': prev(); break;
