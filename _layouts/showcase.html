@@ -104,7 +104,7 @@
                     <div class="curator">
                         <img
                             data-original-img="{{ showcase.contact.image }}"
-                            src="{{ showcase.contact.image }}" class="curator__avatar">
+                            src="{{ showcase.contact.image | default: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019" }}" class="curator__avatar">
                         <div class="curator__contact">
                             <h3 class="curator__name">{{ showcase.contact.name }}</h3>
                             <div class="curator__badge">contact</div>

@@ -1,16 +1,16 @@
 ---
 layout: showcase
 cbase: algoritmeregisters
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019
+image: https://data.utrecht.nl/sites/default/files/stadskantoor.jpg
 name: Algoritmeregister Utrecht
 organisation: Gemeente Utrecht
 country: Nederland
-teaser: Utrecht gebruikt een Excel overzicht als algoritmeregister en publiceert dit op data.overheid.nl
-description: Algoritmeregister van de gemeente Utrecht
-website: https://data.overheid.nl
+teaser: Dit is het Utrechtse algoritmeregister. Hier vindt u een overzicht van de Utrechtse digitaliseringstrajecten waarbij een algoritme en/of voorspellend model een rol vervult.
+description: We zijn uitgegaan van grote algoritmen en/of voorspellende modellen die impact hebben op de stad. We hebben de 'kleine' algoritmen bewust achterwege gelaten in dit overzicht, gelet op de omvang en eventuele beheersbaarheid.
+website: https://data.utrecht.nl/dataset/algoritmeregister-utrecht
 category: algoritmeregisters
 type: Excel
-tools: []
+tools: ['https://data.overheid.nl']
 contact:
     name: 
     email: 
