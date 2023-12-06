@@ -1,18 +1,18 @@
 ---
 layout: showcase
 cbase: participatietools
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019
-name: Open Stad Amsterdam
-organisation: Gemeente Amsterdam
+image: https://openstad.org/uploads/attachments/ckc1p170j0n78pt3wyn8jb7zp-mooi-op-alle-schermen.svg
+name: Open Stad
+organisation: Vereniging Nederlandse Gemeenten
 country: Nederland
-teaser: 
-description: 
-website: https://openstad.amsterdam.nl
+teaser: OpenStad biedt een open source platform waarmee je eenvoudig interactieve websites kunt maken voor jouw participatieprojecten. 
+description: Het platform bevat widgets die speciaal zijn ontwikkeld om inwoners op een interactieve manier meer invloed en zeggenschap te geven op wat er in hun stad of dorp gebeurt. Denk bijvoorbeeld aan een online stemtool, manieren om plannen in te sturen, een tool waarmee bewoners budget kunnen toewijzen aan plannen voor het gebied en een keuzewijzer voor bijvoorbeeld complexe openbare ruimteprojecten Daarnaast hebben deelnemende gemeenten al een hoop kennis opgedaan in het ontwerpen van (online) participatieprocessen, die we graag delen met collega’s uit andere gemeenten. 
+website: https://openstad.org/
 category: participatietools
 type: open source
-tools: ['https://www.openstad.nl']
+tools: ['https://github.com/openstad']
 contact:
-    name: Johan Groenen
-    email: johan@tiltshift.nl
-    image: https://www.jgroenen.nl/img/jgroenen.png
+    name: 
+    email: 
+    image: 
 ---
