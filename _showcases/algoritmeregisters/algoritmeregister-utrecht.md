@@ -1,7 +1,8 @@
 ---
 layout: showcase
 cbase: algoritmeregisters
-image: https://data.utrecht.nl/sites/default/files/stadskantoor.jpg
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Stadskantoor_Utrecht._%2818148413504%29.jpg/2880px-Stadskantoor_Utrecht._%2818148413504%29.jpg
+image-attribution: 'FaceMePLS from The Hague, The Netherlands, CC BY 2.0 &lt;https://creativecommons.org/licenses/by/2.0&gt;, via Wikimedia Commons'
 name: Algoritmeregister Utrecht
 organisation: Gemeente Utrecht
 country: Nederland

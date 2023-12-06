@@ -1,7 +1,8 @@
 ---
 layout: showcase
 cbase: algoritmeregisters
-image: https://www.rotterdam.nl/_next/image?url=https%3A%2F%2Fbackend-dvg.rotterdam.nl%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fhero_large%2Fpublic%2F2022-12%2F22500-Arnoud-Verhey_0.jpg%3Fh%3D940640a5%26itok%3Dl9pnN9Gq&w=3840&q=75
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Depot_Rotterdam_2109-1405.jpg/1600px-Depot_Rotterdam_2109-1405.jpg?20221022174819
+image-attribution: 'Mozzihh, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons'
 name: Algoritmeregister Rotterdam
 organisation: Gemeente Rotterdam
 country: Nederland
