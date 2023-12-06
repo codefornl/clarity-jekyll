@@ -1,7 +1,7 @@
 ---
 layout: showcase
 cbase: open-projecten
-image: https://www.algoritmeregister.org/img/temp-illustration-undraw.png
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/1024px-Solid_white.svg.png?20220303184432
 name: Algoritmeregister
 organisation: Ministerie van Binnenlandse Zaken en Koninkrijksrelaties
 country: Nederland

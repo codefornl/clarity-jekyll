@@ -109,7 +109,12 @@
                         <div class="curator__contact">
                             <h3 class="curator__name">{{ showcase.contact.name }}</h3>
                             <div class="curator__badge">contact</div>
+                            {% if showcase.contact.email %}
                             <a href="mailto:{{ showcase.contact.email }}" class="curator__email">{{ showcase.contact.email }}</a>
+                            {% endif %}
+                            {% if showcase.contact.url %}
+                            <a href="{{ showcase.contact.url }}" class="curator__url">{{ showcase.contact.url }}</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
